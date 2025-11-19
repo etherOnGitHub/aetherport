@@ -1,0 +1,48 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Turbo
+.turbo/
+turbo/
+
+# Next.js
+.next/
+out/
+
+# Env
+.env
+.env.*
+apps/web/.env*
+apps/api/.env*
+
+# Editor
+.vscode/
+.idea/
+
+# Python / Django
+__pycache__/
+*.py[cod]
+*.sqlite3
+venv/
+env/
+
+# Django build artifacts
+apps/api/staticfiles/
+apps/api/media/
+
+# Fly.io / Docker
+.fly/
+Dockerfile*
+*.dockerignore
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Windows junk
+Thumbs.db
+desktop.ini
