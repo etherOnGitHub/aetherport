@@ -29,3 +29,17 @@ body {
   color: var(--fg);
   font-family: var(--font-inter), sans-serif;
 }
+
+p {
+  font-family: var(--font-inter);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo-font {
+  font-family: var(--font-michroma), sans-serif;
+}
