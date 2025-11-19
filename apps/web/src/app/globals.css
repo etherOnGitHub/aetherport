@@ -4,6 +4,7 @@
   /* contrast */
   --bg: #F3EDE2;
   --fg: #0d0c0a;
+  --cont1: #4A5564;
   /* main colours */
   --bar-red: #e25b6a;
   --bar-amber: #f2b544;
@@ -28,10 +29,17 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-inter), sans-serif;
+  z-index: 0;
 }
 
-p {
-  font-family: var(--font-inter);
+p,
+nav,
+a,
+li,
+span,
+div,
+button {
+  font-family: var(--font-inter), sans-serif;
 }
 
 h1,
@@ -42,4 +50,31 @@ h5,
 h6,
 .logo-font {
   font-family: var(--font-michroma), sans-serif;
+}
+
+nav {
+  background-color: var(--cont1);
+}
+
+/* classes */
+
+.rotatedNavBar {
+  transform-origin: left top;
+  transform: rotate(-45deg) translate(-300px, 20px);
+}
+
+.barIndexRed {
+  z-index: 32;
+}
+
+.barIndexPurple {
+  z-index: 31;
+}
+
+.barIndexTeal {
+  z-index: 30;
+}
+
+.barIndexAmber {
+  z-index: 29;
 }
