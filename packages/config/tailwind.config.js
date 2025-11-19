@@ -4,13 +4,13 @@ module.exports = {
             colors: {
                 // Brand Colors
                 // Primary
-                offBlack: "#0D0C0A",
-                offTan: "#F3EDE2",
+                bg: "var(--bg)",
+                fg: "var(--fg)",
                 // Accent
-                barRed: "#E25B6A",
-                barAmber: "#F2B544",
-                barTeal: "#38BCA3",
-                barPuple: "#7C43D1",
+                barRed: "var(--bar-red)",
+                barAmber: "var(--bar-amber)",
+                barTeal: "var(--bar-teal)",
+                barPuple: "var(--bar-purple)",
             }
         }
     }
