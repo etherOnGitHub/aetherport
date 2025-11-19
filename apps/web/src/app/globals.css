@@ -9,6 +9,9 @@
   --bar-amber: #f2b544;
   --bar-teal: #38bca3;
   --bar-purple: #7C43D1;
+  /* fonts */
+  --font-michroma: var(--font-michroma);
+  --font-inter: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,5 +27,5 @@ html,
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
