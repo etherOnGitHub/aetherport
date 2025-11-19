@@ -4,6 +4,7 @@
   /* contrast */
   --bg: #F3EDE2;
   --fg: #0d0c0a;
+  --hl-gr: linear-gradient(90deg, #e25b6a 0%, #f2b544 25%, #38bca3 50%, #7C43D1 75%, #e25b6a 100%);
   --cont1: #e7e0cd;
   /* main colours */
   --bar-red: #e25b6a;
@@ -30,17 +31,6 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-inter), sans-serif;
-  z-index: 0;
-}
-
-p,
-nav,
-a,
-li,
-span,
-div,
-button {
-  font-family: var(--font-inter), sans-serif;
 }
 
 h1,
@@ -61,9 +51,44 @@ nav {
   background-color: var(--cont1);
 }
 
-nav div ul li a:hover {
-  transform: scale(1.50);
-  transition: transform 0.1s;
+ul li {
+  z-index: 50;
+}
+
+a:hover,
+ul li:hover {
+  transform: translate(2px, -2px);
+  background: var(--hl-gr);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow: 0 0 2px var(--fg);
+  animation: pulse 1.4s ease-in-out infinite;
+  filter: saturate(0.8);
+
+}
+
+@keyframes pulse {
+  0% {
+    filter: drop-shadow(0 0 5px var(--bar-red));
+  }
+
+  25% {
+    filter: drop-shadow(0 0 5px var(--bar-teal));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 5px var(--bar-purple));
+  }
+
+  75% {
+    filter: drop-shadow(0 0 5px var(--bar-amber));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 5px var(--bar-red));
+  }
 }
 
 /* classes */

@@ -11,19 +11,27 @@ export default function Navbar() {
                 <div className="ml-6 mr-6 opacity-50">|</div>
                 <ul className="flex flex-row gap-6 ml-2 text-lg">
                     <li>
-                        <a href="">home</a>
+                        <a className="pulse" href="">
+                            home
+                        </a>
                     </li>
                     <li className="opacity-50">|</li>
                     <li>
-                        <a href="">portfolio</a>
+                        <a className="pulse" href="">
+                            portfolio
+                        </a>
                     </li>
                     <li className="opacity-50">|</li>
                     <li>
-                        <a href="">bruh</a>
+                        <a className="pulse" href="">
+                            bruh
+                        </a>
                     </li>
                     <li className="opacity-50">|</li>
                     <li>
-                        <a href="">list</a>
+                        <a className="pulse" href="">
+                            list
+                        </a>
                     </li>
                 </ul>
             </div>
