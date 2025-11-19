@@ -61,6 +61,11 @@ nav {
   background-color: var(--cont1);
 }
 
+nav div ul li a:hover {
+  transform: scale(1.50);
+  transition: transform 0.1s;
+}
+
 /* classes */
 
 .rotatedNavBar {
