@@ -12,6 +12,7 @@ turbo/
 out/
 
 # Env
+env.py
 .env
 .env.*
 apps/web/.env*
@@ -46,3 +47,8 @@ Dockerfile*
 # Windows junk
 Thumbs.db
 desktop.ini
+
+
+# Misc
+dependencies.txt
+layout.txt
