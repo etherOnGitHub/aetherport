@@ -10,7 +10,8 @@ FLYURL = f"{FLY}.fly.dev" if FLY else None
 ALLOWED_HOSTS = [
     FLYURL,
     "localhost",
-    ".fly.dev",
+    "127.0.0.1",
+    "api.aetherwave.dev",
 ]
 
 ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS if host] # Remove any None values so no type errors occur
