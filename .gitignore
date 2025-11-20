@@ -35,8 +35,6 @@ apps/api/media/
 
 # Fly.io / Docker
 .fly/
-Dockerfile*
-*.dockerignore
 
 # Logs
 *.log
