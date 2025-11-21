@@ -1,7 +1,8 @@
 {
     "extends": "../../packages/tsconfig/base.json",
     "compilerOptions": {
-        "baseUrl": "."
+        "baseUrl": ".",
+        "types": ["next", "next/types/global"]
     },
-    "include": ["src"]
+    "include": ["src", "app", "lib", "types"]
 }
