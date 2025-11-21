@@ -4,10 +4,19 @@ import { useEffect, useState } from "react";
 import { fetchFromAPIClient } from "@/lib/client-api/clientFetch";
 
 export default function HomePage() {
-    const [data, setData] = useState(null);
+    interface ProjectResponse {
+        message: string;
+    }
+    interface ErrorResponse {
+        error: string;
+    }
+
+    const [data, setData] = useState<ProjectResponse | ErrorResponse | null>(
+        null
+    );
 
     useEffect(() => {
-        fetchFromAPIClient("/projects/")
+        fetchFromAPIClient("/")
             .then((res) => setData(res))
             .catch((err) => setData({ error: err.message }));
     }, []);

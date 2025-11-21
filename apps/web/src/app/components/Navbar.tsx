@@ -1,5 +1,7 @@
 "use client";
 
+import HomePage from "./testAPI";
+
 export default function Navbar() {
     return (
         <nav className="absolute flex h-[63px] px-4 gap-4 mt-8 pl-15 w-full justify-between ">
@@ -26,6 +28,9 @@ export default function Navbar() {
                         <a href="">list</a>
                     </li>
                 </ul>
+            </div>
+            <div>
+                <HomePage />
             </div>
             <div className="items-center flex mr-10">
                 <a href="">Login</a>
