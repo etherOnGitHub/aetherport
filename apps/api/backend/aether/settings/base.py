@@ -20,8 +20,8 @@ load_dotenv()  # Load environment variables from a .env file if present
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 CORS_ALLOWED_ORIGINS = [
-    "https://domainname.vercel.app",
     "https://aetherwave.dev",
+    "https://www.aetherwave.dev",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
