@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Michroma } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Bars from "./components/Bars";
+import Navbar from "./components/ui/Navbar";
+import Bars from "./components/ui/Bars";
 
 const inter = Inter({
     subsets: ["latin"],

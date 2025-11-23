@@ -1,7 +1,7 @@
 "use client";
 
 // import HomePage from "./testAPI";
-import ApiStatus from "./status/ApiStatus";
+import ApiStatus from "../status/ApiStatus";
 
 export default function Navbar() {
     return (

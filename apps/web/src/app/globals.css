@@ -96,6 +96,10 @@ ul li:hover {
 .rotatedNavBar {
   transform-origin: left top;
   transform: rotate(-45deg) translate(-300px, 20px);
+  transition: 0.5s ease-in-out;
+  filter: none;
+  opacity: 1;
+  transition: 1s ease;
 }
 
 .barIndexRed {
@@ -112,4 +116,16 @@ ul li:hover {
 
 .barIndexAmber {
   z-index: 29;
+}
+
+/* queries */
+
+@media (max-width: 992px) {
+  .rotatedNavBar {
+    transform: rotate(0deg) translate(-20px, -8px);
+    transition: 0.5s ease-in-out;
+    filter: blur(8px);
+    opacity: 0;
+    transition: 3s ease;
+  }
 }
