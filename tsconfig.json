@@ -13,7 +13,7 @@
         "isolatedModules": true,
         "baseUrl": ".",
         "paths": {
-            "@ui/*": ["./packages/ui/*"],
+            "@ui/*": ["./packages/ui/src/*"],
             "@aether/images": ["./packages/images/index.ts"],
             "@aether/images/*": ["./packages/images/*"]
         }

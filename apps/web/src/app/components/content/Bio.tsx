@@ -4,8 +4,7 @@ export default function Bio() {
             className="
         max-w-2xl p-6 rounded-2xl
         bg-white/5 backdrop-blur-xl
-        border border-white/10
-        glitch-border
+        border border-white/10 items-center
       "
         >
             <h1 className="text-3xl font-semibold mb-3">

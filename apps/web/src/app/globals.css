@@ -26,6 +26,10 @@
 
 /* globals */
 
+* {
+  transition: all 0.3s ease-in-out;
+}
+
 html,
 body {
   background: var(--bg);

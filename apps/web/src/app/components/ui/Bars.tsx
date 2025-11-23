@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import useScreenWidth from "../hooks/useScreenWidth";
 
 export default function Bars() {
     const [hidden, setHidden] = useState(false);
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const isSmallScreen = useScreenWidth();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -16,13 +17,6 @@ export default function Bars() {
         }, 500);
         return () => clearTimeout(timer);
     }, [isSmallScreen]);
-
-    useEffect(() => {
-        const check = () => setIsSmallScreen(window.innerWidth < 992);
-        check();
-        window.addEventListener("resize", check);
-        return () => window.removeEventListener("resize", check);
-    }, []);
 
     if (hidden) {
         return (

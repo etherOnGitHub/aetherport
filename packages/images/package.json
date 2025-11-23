@@ -1,0 +1,6 @@
+{
+    "name": "@aether/images",
+    "version": "1.0.0",
+    "main": "index.ts",
+    "types": "images.d.ts"
+}
