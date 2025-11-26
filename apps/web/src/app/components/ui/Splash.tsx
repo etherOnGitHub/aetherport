@@ -5,30 +5,43 @@ import Image from "next/image";
 
 export default function SplashLoader() {
     const [progress, setProgress] = useState(0);
+    const [loaded, setLoaded] = useState(false);
+    const [minTime, setMinTime] = useState(false);
     const [done, setDone] = useState(false);
 
     useEffect(() => {
-        function handleLoaded() {
-            clearInterval(fake);
-            setProgress(100);
-            setTimeout(() => setDone(true), 400);
-        }
+        const delay = setTimeout(() => {
+            setMinTime(true);
+        }, 500);
 
         // Fallback
         const fake = setInterval(() => {
             setProgress((prev) => {
-                if (prev < 90) return prev + 3;
+                if (prev < 80) return prev + 1;
                 return prev;
             });
         }, 100);
+
+        function handleLoaded() {
+            setLoaded(true);
+            setProgress(100);
+            setTimeout(() => setDone(true), 1000);
+        }
 
         window.addEventListener("load", handleLoaded);
 
         return () => {
             window.removeEventListener("load", handleLoaded);
             clearInterval(fake);
+            clearTimeout(delay);
         };
     }, []);
+
+    useEffect(() => {
+        if (loaded && minTime) {
+            setTimeout(() => setDone(true), 1000);
+        }
+    }, [loaded, minTime]);
 
     return (
         <div
