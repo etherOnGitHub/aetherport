@@ -51,7 +51,8 @@ nav span {
   font-family: var(--font-michroma);
 }
 
-nav {
+nav,
+nav>li {
   background-color: var(--cont1);
 }
 
@@ -93,6 +94,13 @@ ul li:hover {
   100% {
     filter: drop-shadow(0 0 5px var(--bar-red));
   }
+}
+
+/* id */
+
+#splash-loader {
+  background-color: color-mix(in srgb, var(--cont1) 20%, transparent);
+  backdrop-filter: blur(6px);
 }
 
 /* classes */

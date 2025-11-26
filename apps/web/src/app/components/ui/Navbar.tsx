@@ -14,7 +14,7 @@ export default function Navbar() {
     if (isSmallScreen) {
         return (
             <>
-                <nav className="absolute flex h-[63px] px-4 gap-4 mt-8 pl-6 w-full justify-between items-center">
+                <nav className="absolute flex h-[63px] px-4 gap-4 mt-8 pl-6 w-full justify-between items-center z-20">
                     <div className="flex items-center">
                         <span className="flex mr-2 -translate-y-1 text-3xl justify-items-center">
                             <a href="">
@@ -24,6 +24,7 @@ export default function Navbar() {
                                     width={50}
                                     height={50}
                                     alt="logo"
+                                    loading="lazy"
                                 />
                             </a>
                         </span>
@@ -33,27 +34,33 @@ export default function Navbar() {
                     </div>
                     <Hamburger open={isOpen} onClick={toggle} />
                 </nav>
-                <ul
-                    className={`transition-all gap-6 ml-2 text-lg justify-items-center space-y-5 "
-                    ${isOpen ? "flex-col mt-30" : "hidden -mt-100"}
+                <div className="absolute w-[95%] flex items-center justify-center z-10">
+                    <ul
+                        className={`transition-all w-full gap-6 ml-2 text-lg justify-items-center space-y-5 flex-col"
+                    ${
+                        isOpen
+                            ? "translate-y-30 opacity-100"
+                            : " opacity-0 pointer-events-none h-0 "
+                    }
                 `}
-                >
-                    <li>
-                        <a href="">home</a>
-                    </li>
-                    <li>
-                        <a href="">portfolio</a>
-                    </li>
-                    <li>
-                        <a href="">bruh</a>
-                    </li>
-                    <li>
-                        <a href="">list</a>
-                    </li>
-                    <li>
-                        <a href="">Login</a>
-                    </li>
-                </ul>
+                    >
+                        <li>
+                            <a href="">home</a>
+                        </li>
+                        <li>
+                            <a href="">portfolio</a>
+                        </li>
+                        <li>
+                            <a href="">bruh</a>
+                        </li>
+                        <li>
+                            <a href="">list</a>
+                        </li>
+                        <li>
+                            <a href="">Login</a>
+                        </li>
+                    </ul>
+                </div>
             </>
         );
     } else {
@@ -79,7 +86,7 @@ export default function Navbar() {
                         </li>
                         <li className="opacity-50">|</li>
                         <li>
-                            <a href="">something else</a>
+                            <a href=""></a>
                         </li>
                     </ul>
                 </div>

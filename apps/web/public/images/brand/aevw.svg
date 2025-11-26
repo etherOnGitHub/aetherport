@@ -1,0 +1,17 @@
+<svg width="119.99999999999999" height="80" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient y2="100%" x2="100%" y1="0%" x1="0%" id="awGrad">
+   <stop stop-color="#00c6ff" offset="0%"/>
+   <stop stop-color="#0072ff" offset="50%"/>
+   <stop stop-color="#ff2db5" offset="75%"/>
+   <stop stop-color="#ff8c00" offset="100%"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <path stroke="null" id="svg_2" fill="url(#awGrad)" d="m48.39623,0.18868l15,0l15,46.44654l15,-46.44654l15,0l-25,79.62264l-10,0l-25,-79.62264z"/>
+  <path transform="rotate(179.965 42.7987 40)" stroke="null" id="svg_10" fill="url(#awGrad)" d="m12.79874,0.18868l15,0l15,46.44654l15,-46.44654l15,0l-25,79.62264l-10,0l-25,-79.62264z"/>
+  <path transform="rotate(-179.898 114.119 40)" stroke="null" id="svg_11" fill="url(#awGrad)" d="m84.1195,0.18868l15,0l15,46.44654l15,-46.44654l15,0l-25,79.62264l-10,0l-25,-79.62264z"/>
+  <path transform="rotate(0.0453277 7.20125 40)" stroke="null" id="svg_12" fill="url(#awGrad)" d="m-22.79875,0.18868l15,0l15,46.44654l15,-46.44654l15,0l-25,79.62264l-10,0l-25,-79.62264z"/>
+ </g>
+</svg>

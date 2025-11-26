@@ -12,20 +12,20 @@ export default function SplashLoader() {
     useEffect(() => {
         const delay = setTimeout(() => {
             setMinTime(true);
-        }, 500);
+        }, 50);
 
         // Fallback
         const fake = setInterval(() => {
             setProgress((prev) => {
-                if (prev < 80) return prev + 1;
-                return prev;
+                const next = prev + 4;
+                return next > 100 ? 100 : next;
             });
-        }, 100);
+        }, 60);
 
         function handleLoaded() {
             setLoaded(true);
             setProgress(100);
-            setTimeout(() => setDone(true), 1000);
+            clearInterval(fake);
         }
 
         window.addEventListener("load", handleLoaded);
@@ -39,17 +39,25 @@ export default function SplashLoader() {
 
     useEffect(() => {
         if (loaded && minTime) {
-            setTimeout(() => setDone(true), 1000);
+            setTimeout(() => setDone(true), 400);
         }
     }, [loaded, minTime]);
 
+    // Failsafe in case 'load' event doesn't fire
+    useEffect(() => {
+        const failsafe = setTimeout(() => {
+            setProgress(100);
+            setLoaded(true);
+            setMinTime(true);
+        }, 4000);
+
+        return () => clearTimeout(failsafe);
+    }, []);
+
     return (
         <div
-            className={`
-        fixed inset-0 z-9999
-        flex flex-col items-center justify-center
-        bg-black text-white
-        transition-opacity duration-500
+            id="splash-loader"
+            className={`absolute z-9999 flex flex-col items-center justify-center transition-opacity duration-500 w-full h-full backdrop-blur-3xl bg-blend-saturation
         ${done ? "opacity-0 pointer-events-none" : "opacity-100"}
       `}
         >
@@ -57,16 +65,18 @@ export default function SplashLoader() {
             <Image
                 src="/images/brand/AW_transparent.png"
                 alt="Logo"
-                width={400}
-                height={400}
+                width={150}
+                height={150}
+                loading="eager"
+                className="w-auto"
             />
             {/* Spinner */}
-            <div className="w-10 h-10 border-4 border-white/20 border-t-white rounded-full animate-spin mb-6"></div>
+            <div className="w-10 h-10 border-4 border-t-white mix-blend-color-burn rounded-full animate-spin mb-6"></div>
 
-            {/* Loading bar container */}
-            <div className="w-64 h-2 bg-white/20 rounded-full overflow-hidden">
+            {/* Loading bar */}
+            <div className="w-64 h-2 rounded-full overflow-hidden">
                 <div
-                    className="h-full bg-white transition-all"
+                    className="h-full loadingBar transition-all"
                     style={{ width: progress + "%" }}
                 />
             </div>

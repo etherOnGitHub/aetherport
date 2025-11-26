@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     title: "aetherwave hub",
     description:
         "Central hub for aetherwave projects, docs, and more. Made by Callum/ etherchild. A home for all things etherchild.",
+    icons: {
+        icon: "/images/brand/aevw.svg",
+    },
 };
 
 export default function RootLayout({
@@ -33,7 +36,6 @@ export default function RootLayout({
                 className={`${michroma.variable} ${inter.variable} antialiased`}
             >
                 <Bars />
-                {/* { NAVBAR } */}
                 <Navbar />
                 {children}
             </body>
