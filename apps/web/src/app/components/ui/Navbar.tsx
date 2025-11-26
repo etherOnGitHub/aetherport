@@ -1,56 +1,60 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-
+import Hamburger from "./Hamburger";
 import useScreenWidth from "../hooks/useScreenWidth";
-
-// import HomePage from "./testAPI";
 import ApiStatus from "../status/ApiStatus";
 
 export default function Navbar() {
     const isSmallScreen = useScreenWidth();
+    const [isOpen, setOpen] = useState(false);
+    const toggle = () => setOpen((prev) => !prev);
 
     if (isSmallScreen) {
         return (
-            <nav className="absolute flex h-[63px] px-4 gap-4 mt-8 pl-6 w-full justify-between items-center">
-                <div className="flex items-center">
-                    <span className="flex mr-2 -translate-y-1 text-3xl justify-items-center">
-                        <a href="">
-                            <Image
-                                className="ml-5 mt-2"
-                                src="/images/brand/AW2crop.png"
-                                width={50}
-                                height={50}
-                                alt="logo"
-                            />
-                        </a>
-                    </span>
-                    {/* <div className="ml-6 mr-6 opacity-50">|</div> */}
-                    {/* <ul className="flex flex-row gap-6 ml-2 text-lg">
-                        <li>
-                            <a href="">home</a>
-                        </li>
-                        <li className="opacity-50">|</li>
-                        <li>
-                            <a href="">portfolio</a>
-                        </li>
-                        <li className="opacity-50">|</li>
-                        <li>
-                            <a href="">bruh</a>
-                        </li>
-                        <li className="opacity-50">|</li>
-                        <li>
-                            <a href="">list</a>
-                        </li>
-                    </ul> */}
-                </div>
-                <div className="justify-end hidden xs:block">
-                    <ApiStatus />
-                </div>
-                <div className="items-center flex mr-10">
-                    <a href="">Login</a>
-                </div>
-            </nav>
+            <>
+                <nav className="absolute flex h-[63px] px-4 gap-4 mt-8 pl-6 w-full justify-between items-center">
+                    <div className="flex items-center">
+                        <span className="flex mr-2 -translate-y-1 text-3xl justify-items-center">
+                            <a href="">
+                                <Image
+                                    className="ml-5 mt-2"
+                                    src="/images/brand/AW2crop.png"
+                                    width={50}
+                                    height={50}
+                                    alt="logo"
+                                />
+                            </a>
+                        </span>
+                    </div>
+                    <div className="justify-end hidden xs:block">
+                        <ApiStatus />
+                    </div>
+                    <Hamburger open={isOpen} onClick={toggle} />
+                </nav>
+                <ul
+                    className={`transition-all gap-6 ml-2 text-lg justify-items-center space-y-5 "
+                    ${isOpen ? "flex-col mt-30" : "hidden -mt-100"}
+                `}
+                >
+                    <li>
+                        <a href="">home</a>
+                    </li>
+                    <li>
+                        <a href="">portfolio</a>
+                    </li>
+                    <li>
+                        <a href="">bruh</a>
+                    </li>
+                    <li>
+                        <a href="">list</a>
+                    </li>
+                    <li>
+                        <a href="">Login</a>
+                    </li>
+                </ul>
+            </>
         );
     } else {
         return (
@@ -71,11 +75,11 @@ export default function Navbar() {
                         </li>
                         <li className="opacity-50">|</li>
                         <li>
-                            <a href="">bruh</a>
+                            <a href="">about me</a>
                         </li>
                         <li className="opacity-50">|</li>
                         <li>
-                            <a href="">list</a>
+                            <a href="">something else</a>
                         </li>
                     </ul>
                 </div>
