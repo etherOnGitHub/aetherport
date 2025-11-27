@@ -52,8 +52,10 @@ nav span {
 }
 
 nav,
-nav>li {
+nav>li,
+div ul {
   background-color: var(--cont1);
+  font-family: var(--font-michroma);
 }
 
 ul li {
@@ -61,7 +63,7 @@ ul li {
 }
 
 a:hover,
-ul li:hover {
+ul li a:hover {
   transform: translate(2px, -2px);
   background: var(--hl-gr);
   -webkit-background-clip: text;
@@ -103,7 +105,22 @@ ul li:hover {
   backdrop-filter: blur(6px);
 }
 
+#nav-div {
+  background-color: var(--cont1);
+  padding: 12px;
+}
+
 /* classes */
+
+/* .no-anim,
+.no-anim:hover {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  color: inherit !important;
+  text-shadow: none !important;
+} */
 
 .rotatedNavBar {
   transform-origin: left top;
