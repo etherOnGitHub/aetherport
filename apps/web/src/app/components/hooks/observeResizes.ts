@@ -1,7 +1,9 @@
+"use client";
+
 import { RefObject, useEffect, useState } from "react";
 
-export default function useObserveResizes(
-    ref: RefObject<HTMLElement>,
+export default function useObserveResizes<T extends Element>(
+    ref: RefObject<T | null>,
     delay = 1000
 ) {
     const [size, setSize] = useState({ width: 0, height: 0 });

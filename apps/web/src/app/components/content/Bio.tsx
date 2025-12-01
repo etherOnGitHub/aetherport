@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CanvasContext from "../ui/CanvasContext";
 
 export default function Bio() {
     return (
@@ -31,14 +31,9 @@ export default function Bio() {
                     </p>
                 </div>
                 <div className="flex-col overflow justify-items-center items-center self-center mt-6 lg:mt-0">
-                    <Image
-                        src="/images/etherchild/pixel_sort.webp"
-                        alt="etherchild pixel sort profile image"
-                        width={300}
-                        height={600}
-                        className=""
-                        loading="lazy"
-                    ></Image>
+                    <div className="w-[300px] h-[450px]">
+                        <CanvasContext src="/images/etherchild/pixel_sort.webp" />
+                    </div>
                 </div>
             </div>
         </div>
