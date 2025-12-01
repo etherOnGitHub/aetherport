@@ -21,9 +21,14 @@ export default function CanvasContext({ src }: { src: string }) {
 
         const buffer = document.createElement("canvas");
         const bufferCtx = buffer.getContext("2d", { willReadFrequently: true });
-        if (!bufferCtx) return;
+        if (!bufferCtx) return () => {};
+
+        let binLoop: (() => void) | null = null;
+        let cancelled = false;
 
         image.onload = () => {
+            if (cancelled) return;
+
             buffer.width = canvas.width;
             buffer.height = canvas.height;
 
@@ -37,7 +42,17 @@ export default function CanvasContext({ src }: { src: string }) {
 
             ctx.drawImage(buffer, 0, 0);
 
-            startLoop(ctx, bufferCtx, buffer.width, buffer.height, 16);
+            binLoop = startLoop(
+                ctx,
+                bufferCtx,
+                buffer.width,
+                buffer.height,
+                16
+            );
+        };
+        return () => {
+            cancelled = true;
+            if (binLoop) binLoop();
         };
     }
 
@@ -53,7 +68,7 @@ export default function CanvasContext({ src }: { src: string }) {
         canvas.height = size.height + overSize * 4;
 
         initCanvas(ctx, canvas, src);
-    }, [size, src]);
+    }, [size, src]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div ref={containerRef} className="relative block">
