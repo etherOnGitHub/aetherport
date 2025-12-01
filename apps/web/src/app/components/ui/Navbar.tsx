@@ -34,30 +34,43 @@ export default function Navbar() {
                     </div>
                     <Hamburger open={isOpen} onClick={toggle} />
                 </nav>
-                <div className="absolute w-[95%] flex items-center justify-center z-10">
+                <div
+                    id=""
+                    className="absolute w-full h-0 flex items-center justify-center text-center z-10 mt-24 mb-2"
+                >
                     <ul
-                        className={`transition-all w-full gap-6 ml-2 text-lg justify-items-center space-y-5 flex-col"
+                        className={`transition-all w-full text-lg justify-items-center space-y-6 flex-col items-center nav-div mb-2"
                     ${
                         isOpen
-                            ? "translate-y-30 opacity-100"
-                            : " opacity-0 pointer-events-none h-0 "
+                            ? "translate-y-[125px] opacity-100"
+                            : " opacity-0 pointer-events-none"
                     }
                 `}
                     >
-                        <li>
-                            <a href="">home</a>
+                        <li className="w-full h-full border border-[--fg] border-r-8 border-l-8">
+                            <a className="w-full h-full" href="">
+                                Hub
+                            </a>
                         </li>
-                        <li>
-                            <a href="">portfolio</a>
+                        <li className="w-full h-full border border-[--fg] border-r-8 border-l-8">
+                            <a className="w-full h-full" href="">
+                                Portfolio
+                            </a>
                         </li>
-                        <li>
-                            <a href="">bruh</a>
+                        <li className="w-full h-full border border-[--fg] border-r-8 border-l-8">
+                            <a className="w-full h-full" href="">
+                                About Me
+                            </a>
                         </li>
-                        <li>
-                            <a href="">list</a>
+                        <li className="w-full h-full border border-[--fg] border-r-8 border-l-8">
+                            <a className="w-full h-full" href="">
+                                Links
+                            </a>
                         </li>
-                        <li>
-                            <a href="">Login</a>
+                        <li className="w-full h-full border border-[--fg] border-r-8 border-l-8 mb-2">
+                            <a className="w-full h-full" href="">
+                                Login
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -69,24 +82,24 @@ export default function Navbar() {
                 {/* navbar title and pic */}
                 <div className="flex items-center">
                     <span className="flex mr-2 -translate-y-1 text-3xl ml-2">
-                        aetherwave
+                        <a href="">aetherwave</a>
                     </span>
                     <div className="ml-6 mr-6 opacity-50">|</div>
                     <ul className="flex flex-row gap-6 ml-2 text-lg">
                         <li>
-                            <a href="">home</a>
+                            <a href="">Hub</a>
                         </li>
-                        <li className="opacity-50">|</li>
+                        <li className="opacity-50 no-anim">|</li>
                         <li>
-                            <a href="">portfolio</a>
+                            <a href="">Portfolio</a>
                         </li>
-                        <li className="opacity-50">|</li>
+                        <li className="opacity-50 no-anim">|</li>
                         <li>
-                            <a href="">about me</a>
+                            <a href="">About Me</a>
                         </li>
-                        <li className="opacity-50">|</li>
+                        <li className="opacity-50 no-anim">|</li>
                         <li>
-                            <a href=""></a>
+                            <a href="">Links</a>
                         </li>
                     </ul>
                 </div>

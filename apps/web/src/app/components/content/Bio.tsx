@@ -1,24 +1,41 @@
+import CanvasContext from "../ui/CanvasContext";
+
 export default function Bio() {
     return (
-        <div className="mt-5 max-w-2xl p-6 rounded-2xl backdrop-blur-xl border items-center">
-            <h1 className="text-3xl font-semibold mb-3">
-                Hey, I’m <span className="">etherchild</span>
-            </h1>
+        <div className="mt-3 p-2 md:p-5 rounded-2xl backdrop-blur-x justify-items-center items-center flex gap-8 max-w-5xl">
+            <div className="flex-row lg:columns-2 border border-[--fg]/30 p-4 rounded-2xl">
+                <div className="flex-col z-20">
+                    <h1 className="text-3xl font-semibold mb-3">
+                        Hey, I’m <span className="">etherchild</span>
+                    </h1>
 
-            <p className="text-lg leading-relaxed">
-                A full stack developer with a thing for audio tech, cyber
-                aesthetics, and building ridiculous tools that probably
-                shouldn’t work but somehow do. Currently crafting{" "}
-                <span className="font-medium">aetherwave</span> — my ecosystem
-                of apps, synths, and interactive experiences powered by Django,
-                React, C++, and a bit too much caffeine.
-            </p>
-
-            <p className="mt-4 leading-relaxed">
-                I focus on efficient, clean systems: REST APIs, modern UI,
-                scalable backends, and real-time audio experiments. If it looks
-                like it came out of a sci-fi glitch demo? Even better.
-            </p>
+                    <p className="text-lg leading-relaxed">
+                        A full stack developer with a thing for audio tech,
+                        cyber aesthetics, and building cool tools with the power
+                        of AI at my side. Currently crafting{" "}
+                        <span className="font-medium">aetherwave</span> — my
+                        ecosystem of apps, synths, and interactive experiences
+                        powered by Django, React and C++.
+                    </p>
+                    <p className="text-lg leading-relaxed">
+                        I am also a music producer and sound engineer
+                        specializing in electronic music and sound design. I
+                        love messing with audio FFT data to mould aetheric
+                        soundscapes and glitchy textures.
+                    </p>
+                    <p className="mt-4 leading-relaxed">
+                        I focus on efficient, clean systems: REST APIs, modern
+                        UI, scalable backends, and real-time audio experiments.
+                        If it looks like it came out of a sci-fi glitch demo?
+                        Even better.
+                    </p>
+                </div>
+                <div className="flex-col justify-items-center items-center self-center mt-6 lg:mt-0">
+                    <div className="w-full h-full rounded-xl overflow-visible border border-[--fg]/30">
+                        <CanvasContext src="/images/etherchild/pixel_sort.webp" />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
