@@ -1,5 +1,7 @@
 "use client";
 
+import { expo } from "../logic/math";
+
 export type Crawler = {
     x: number;
     y: number;
@@ -32,7 +34,7 @@ export function createCrawler(
     const p = bufferCtx.getImageData(startX, startY, 1, 1).data;
     const color = `rgba(${p[0]}, ${p[1]}, ${p[2]}, ${p[3] / 255})`;
 
-    const maxSteps = 5 + Math.floor(Math.random() * 100);
+    const maxSteps = Math.floor(expo(2, 200, 0.02));
 
     return {
         x: startX,

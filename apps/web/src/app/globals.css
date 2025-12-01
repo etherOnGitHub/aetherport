@@ -98,6 +98,30 @@ ul li a:hover {
   }
 }
 
+canvas {
+  image-rendering: pixelated;
+  width: 100%;
+  height: 600px;
+  scale: 2;
+  z-index: 12;
+  filter: contrast(1.1) brightness(0.95);
+  animation: hueShift 0.1s ease-in-out infinite;
+}
+
+@keyframes hueShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(10deg);
+  }
+
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
 /* id */
 
 #splash-loader {

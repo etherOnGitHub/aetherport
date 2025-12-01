@@ -14,7 +14,7 @@ export default function startLoop(
     delta: number
 ) {
     let last = 0;
-    const speed = 20;
+    const speed = 2;
 
     const crawlers: Crawler[] = [];
 

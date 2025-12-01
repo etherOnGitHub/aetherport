@@ -4,7 +4,7 @@ export default function Bio() {
     return (
         <div className="mt-3 p-2 md:p-5 rounded-2xl backdrop-blur-x justify-items-center items-center flex gap-8 max-w-5xl">
             <div className="flex-row lg:columns-2 border border-[--fg]/30 p-4 rounded-2xl">
-                <div className="flex-col">
+                <div className="flex-col z-20">
                     <h1 className="text-3xl font-semibold mb-3">
                         Hey, I’m <span className="">etherchild</span>
                     </h1>
@@ -30,8 +30,8 @@ export default function Bio() {
                         Even better.
                     </p>
                 </div>
-                <div className="flex-col overflow justify-items-center items-center self-center mt-6 lg:mt-0">
-                    <div className="w-[300px] h-[450px]">
+                <div className="flex-col justify-items-center items-center self-center mt-6 lg:mt-0">
+                    <div className="w-full h-full rounded-xl overflow-visible border border-[--fg]/30">
                         <CanvasContext src="/images/etherchild/pixel_sort.webp" />
                     </div>
                 </div>
