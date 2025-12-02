@@ -13,12 +13,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+from datetime import timedelta
 
 load_dotenv()  # Load environment variables from a .env file if present
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
+CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "https://aetherwave.dev",
     "https://www.aetherwave.dev",
@@ -47,8 +49,10 @@ INSTALLED_APPS = [
     # third-party
     'rest_framework',
     'corsheaders',
+    'rest_framework_simplejwt.token_blacklist',
     # apps
     'core',
+    'auth',
     'projects',
 ]
 
@@ -138,3 +142,16 @@ STATIC_ROOT = BASE_DIR / 'static'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# jwt
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME':  timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'AUTH_COOKIE': 'access',
+    'AUTH_COOKIE_REFRESH': 'refresh',
+    'AUTH_COOKIE_SECURE': True,
+    'AUTH_COOKIE_HTTP_ONLY': True,
+    'AUTH_COOKIE_SAMESITE': 'None',
+}
