@@ -1,13 +1,14 @@
 "use client";
 
-export const API_URL =
-    process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+export function getAPIURL() {
+    return process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+}
 
 export async function fetchFromAPIClient(
     path: string,
     options: RequestInit = {}
 ) {
-    const res = await fetch(`${API_URL}${path}`, {
+    const res = await fetch(`${getAPIURL()}${path}`, {
         credentials: "include",
         cache: "no-store",
         headers: {

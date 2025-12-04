@@ -1,0 +1,46 @@
+# Node modules across monorepo
+**/node_modules
+**/.pnpm-store
+**/npm-debug.log
+
+# Next.js build output
+**/.next
+**/out
+**/dist
+
+# Logs
+*.log
+**/*.log
+
+# Git
+.git
+.gitignore
+
+# Python cache
+**/__pycache__
+**/*.pyc
+
+# Docker files
+docker-compose.yml
+dockerfile
+Dockerfile
+
+# Env files
+.env
+.env.*
+.env.local
+apps/web/.env.local
+
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode
+.idea
+
+# Misc
+tree.txt
+dependencies.txt
+deploy.txt
