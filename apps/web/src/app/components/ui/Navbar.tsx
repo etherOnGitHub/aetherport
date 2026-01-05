@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Hamburger from "./Hamburger";
 import useScreenWidth from "../hooks/useScreenWidth";
 import ApiStatus from "../status/ApiStatus";
@@ -14,7 +15,7 @@ export default function Navbar() {
     if (isSmallScreen) {
         return (
             <>
-                <nav className="absolute flex h-[63px] px-4 gap-4 mt-8 pl-6 w-full justify-between items-center z-20">
+                <nav className="absolute flex h-15.75 px-4 gap-4 mt-8 pl-6 w-full justify-between items-center z-20">
                     <div className="flex items-center">
                         <span className="flex mr-2 -translate-y-1 text-3xl justify-items-center">
                             <a href="">
@@ -42,20 +43,20 @@ export default function Navbar() {
                         className={`transition-all w-full text-lg justify-items-center space-y-6 flex-col items-center nav-div mb-2"
                     ${
                         isOpen
-                            ? "translate-y-[125px] opacity-100"
+                            ? "translate-y-31.25 opacity-100"
                             : " opacity-0 pointer-events-none"
                     }
                 `}
                     >
                         <li className="w-full h-full border border-[--fg] border-r-8 border-l-8">
-                            <a className="w-full h-full" href="">
+                            <Link className="w-full h-full" href="">
                                 Hub
-                            </a>
+                            </Link>
                         </li>
                         <li className="w-full h-full border border-[--fg] border-r-8 border-l-8">
-                            <a className="w-full h-full" href="">
+                            <Link className="w-full h-full" href="/portfolio">
                                 Portfolio
-                            </a>
+                            </Link>
                         </li>
                         <li className="w-full h-full border border-[--fg] border-r-8 border-l-8">
                             <a className="w-full h-full" href="">
@@ -78,7 +79,7 @@ export default function Navbar() {
         );
     } else {
         return (
-            <nav className="absolute flex h-[63px] px-4 gap-4 mt-8 pl-15 w-full justify-between items-center">
+            <nav className="absolute flex h-15.75 px-4 gap-4 mt-8 pl-15 w-full justify-between items-center">
                 {/* navbar title and pic */}
                 <div className="flex items-center">
                     <span className="flex mr-2 -translate-y-1 text-3xl ml-2">
@@ -87,11 +88,11 @@ export default function Navbar() {
                     <div className="ml-6 mr-6 opacity-50">|</div>
                     <ul className="flex flex-row gap-6 ml-2 text-lg">
                         <li>
-                            <a href="">Hub</a>
+                            <Link href="/">Hub</Link>
                         </li>
                         <li className="opacity-50 no-anim">|</li>
                         <li>
-                            <a href="">Portfolio</a>
+                            <Link href="/portfolio">Portfolio</Link>
                         </li>
                         <li className="opacity-50 no-anim">|</li>
                         <li>

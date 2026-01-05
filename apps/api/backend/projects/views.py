@@ -19,3 +19,4 @@ class ProjectViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all().order_by("-created_at")
     serializer_class = ProjectSerialiser
     permission_classes = [IsAuthenticatedOrReadOnly]
+    lookup_field = 'slug'

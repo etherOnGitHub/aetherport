@@ -1,17 +1,81 @@
-<svg width="119.99999999999999" height="80" xmlns="http://www.w3.org/2000/svg">
- <defs>
-  <linearGradient y2="100%" x2="100%" y1="0%" x1="0%" id="awGrad">
-   <stop stop-color="#00c6ff" offset="0%"/>
-   <stop stop-color="#0072ff" offset="50%"/>
-   <stop stop-color="#ff2db5" offset="75%"/>
-   <stop stop-color="#ff8c00" offset="100%"/>
-  </linearGradient>
- </defs>
- <g>
-  <title>Layer 1</title>
-  <path stroke="null" id="svg_2" fill="url(#awGrad)" d="m48.39623,0.18868l15,0l15,46.44654l15,-46.44654l15,0l-25,79.62264l-10,0l-25,-79.62264z"/>
-  <path transform="rotate(179.965 42.7987 40)" stroke="null" id="svg_10" fill="url(#awGrad)" d="m12.79874,0.18868l15,0l15,46.44654l15,-46.44654l15,0l-25,79.62264l-10,0l-25,-79.62264z"/>
-  <path transform="rotate(-179.898 114.119 40)" stroke="null" id="svg_11" fill="url(#awGrad)" d="m84.1195,0.18868l15,0l15,46.44654l15,-46.44654l15,0l-25,79.62264l-10,0l-25,-79.62264z"/>
-  <path transform="rotate(0.0453277 7.20125 40)" stroke="null" id="svg_12" fill="url(#awGrad)" d="m-22.79875,0.18868l15,0l15,46.44654l15,-46.44654l15,0l-25,79.62264l-10,0l-25,-79.62264z"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="aw-grad" x1="64" y1="256" x2="448" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0.00" stop-color="#1E90FF" stop-opacity="1"/>
+      <stop offset="0.22" stop-color="#1E90FF" stop-opacity="1"/>
+      <stop offset="0.30" stop-color="#38bca3" stop-opacity="0.90"/>
+      <stop offset="0.40" stop-color="#1E90FF" stop-opacity="1"/>
+      <stop offset="0.54" stop-color="#f2b544" stop-opacity="0.78"/>
+      <stop offset="0.58" stop-color="#e25b6a" stop-opacity="0.60"/>
+      <stop offset="0.64" stop-color="#1E90FF" stop-opacity="1"/>
+      <stop offset="0.82" stop-color="#7C43D1" stop-opacity="0.88"/>
+      <stop offset="1.00" stop-color="#1E90FF" stop-opacity="1"/>
+    </linearGradient>
+
+    <linearGradient id="aw-cool" x1="64" y1="256" x2="448" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0.00" stop-color="#1E90FF" stop-opacity="0.92"/>
+      <stop offset="0.38" stop-color="#38bca3" stop-opacity="0.70"/>
+      <stop offset="0.78" stop-color="#7C43D1" stop-opacity="0.72"/>
+      <stop offset="1.00" stop-color="#1E90FF" stop-opacity="0.92"/>
+    </linearGradient>
+
+    <filter id="aw-glow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.0" result="b"/>
+      <feColorMatrix
+        in="b"
+        type="matrix"
+        values="
+          1 0 0 0 0
+          0 1 0 0 0
+          0 0 1 0 0
+          0 0 0 0.35 0"
+        result="g"
+      />
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <path id="aw-core"
+      d="M64 256
+         C118 168 192 120 248 238
+         S344 392 448 256" />
+
+    <path id="aw-inner-1"
+      d="M64 256
+         C132 196 198 120 246 244
+         S328 360 448 256" />
+    <path id="aw-inner-2"
+      d="M64 256
+         C110 150 210 168 252 256
+         S340 344 448 256" />
+  </defs>
+
+  <g filter="url(#aw-glow)">
+    <path d="M64 244 C120 154 194 104 250 232 S350 404 448 244" stroke="url(#aw-cool)" stroke-width="1.4" stroke-linecap="round" opacity="0.14"/>
+    <path d="M64 268 C114 178 198 142 246 250 S336 372 448 268" stroke="url(#aw-cool)" stroke-width="1.4" stroke-linecap="round" opacity="0.14"/>
+
+    <path d="M64 248 C126 170 188 110 248 236 S356 396 448 248" stroke="url(#aw-cool)" stroke-width="1.8" stroke-linecap="round" opacity="0.16"/>
+    <path d="M64 252 C116 160 206 130 248 242 S330 382 448 252" stroke="url(#aw-cool)" stroke-width="1.8" stroke-linecap="round" opacity="0.17"/>
+    <path d="M64 260 C124 190 196 142 246 252 S338 362 448 260" stroke="url(#aw-cool)" stroke-width="1.8" stroke-linecap="round" opacity="0.17"/>
+    <path d="M64 264 C112 172 212 156 252 258 S346 352 448 264" stroke="url(#aw-cool)" stroke-width="1.8" stroke-linecap="round" opacity="0.17"/>
+
+    <path d="M64 246 C128 164 196 118 248 236 S340 394 448 246" stroke="url(#aw-cool)" stroke-width="1.2" stroke-linecap="round" opacity="0.13"/>
+    <path d="M64 250 C122 178 190 126 246 240 S348 388 448 250" stroke="url(#aw-cool)" stroke-width="1.2" stroke-linecap="round" opacity="0.13"/>
+    <path d="M64 254 C118 170 204 136 248 246 S336 378 448 254" stroke="url(#aw-cool)" stroke-width="1.2" stroke-linecap="round" opacity="0.13"/>
+    <path d="M64 258 C130 188 198 142 246 250 S342 366 448 258" stroke="url(#aw-cool)" stroke-width="1.2" stroke-linecap="round" opacity="0.13"/>
+    <path d="M64 262 C114 166 210 154 252 260 S350 356 448 262" stroke="url(#aw-cool)" stroke-width="1.2" stroke-linecap="round" opacity="0.13"/>
+    <path d="M64 266 C124 194 192 148 246 262 S332 350 448 266" stroke="url(#aw-cool)" stroke-width="1.2" stroke-linecap="round" opacity="0.13"/>
+
+    <path d="M64 254 C120 176 194 122 248 240 S346 388 448 254" stroke="url(#aw-grad)" stroke-width="2.4" stroke-linecap="round" opacity="0.22"/>
+    <path d="M64 258 C116 166 206 132 248 248 S334 378 448 258" stroke="url(#aw-grad)" stroke-width="2.4" stroke-linecap="round" opacity="0.24"/>
+    <path d="M64 260 C126 190 198 140 246 252 S340 366 448 260" stroke="url(#aw-grad)" stroke-width="2.4" stroke-linecap="round" opacity="0.24"/>
+
+    <use href="#aw-inner-1" stroke="url(#aw-grad)" stroke-width="3.4" stroke-linecap="round" opacity="0.32"/>
+    <use href="#aw-inner-2" stroke="url(#aw-cool)" stroke-width="2.4" stroke-linecap="round" opacity="0.26"/>
+
+    <use href="#aw-core" stroke="url(#aw-grad)" stroke-width="6.0" stroke-linecap="round" opacity="0.55"/>
+    <use href="#aw-core" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" opacity="0.16"/>
+  </g>
 </svg>
