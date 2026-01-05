@@ -41,7 +41,16 @@ class Project(models.Model):
     
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.title)
+            baseSlug = slugify(self.title)
+            slug = baseSlug
+            counter = 1
+
+            while Project.objects.filter(slug=slug).exists():
+                slug = f"{baseSlug}-{counter}"
+                counter += 1
+
+            self.slug = slug
+            
         super().save(*args, **kwargs)
 
     class Meta:
