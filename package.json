@@ -11,6 +11,6 @@
     },
     "devDependencies": {
         "baseline-browser-mapping": "^2.8.32",
-        "turbo": "^2.6.3"
+        "turbo": "^2.7.2"
     }
 }
