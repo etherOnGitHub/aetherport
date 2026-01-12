@@ -10,7 +10,7 @@ from .serialisers import TagsSerialiser, ProjectSerialiser
 #-------------------------------
 class TagsViewSet(viewsets.ModelViewSet):
     queryset = Tag.objects.all().order_by('name')
-    serialiser_class = TagsSerialiser
+    serializer_class = TagsSerialiser
     permission_classes = [IsAuthenticatedOrReadOnly]
 #-------------------------------
 # projects ViewSet
