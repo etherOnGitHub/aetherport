@@ -2,14 +2,6 @@
 
 export async function fetchAPI(path: string, options: RequestInit = {}) {
     const API_URL = process.env.API_BASE_URL;
-    console.log(
-        "isServer",
-        typeof window === "undefined",
-        "API_BASE_URL",
-        process.env.API_BASE_URL
-    );
-
-    console.log("API_BASE_URL at runtime:", process.env.API_BASE_URL);
 
     if (!API_URL) {
         throw new Error("API_URL is not defined in environment variables");
