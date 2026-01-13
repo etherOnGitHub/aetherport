@@ -1,9 +1,7 @@
-"use server";
+export const dynamic = "force-dynamic";
 
 import Projects from "../components/content/Projects";
 import { getProjects } from "../../../lib/server-api/getProjects";
-
-export const dynamic = "force-dynamic";
 
 export default async function ProjectsPage() {
     const projects = await getProjects();
