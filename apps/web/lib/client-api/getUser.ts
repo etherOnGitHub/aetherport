@@ -1,17 +1,11 @@
 "use client";
 
-export async function getUser() {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/auth/account/`,
-        {
-            credentials: "include",
-            cache: "no-store",
-        }
-    );
+import { fetchFromAPIClient } from "./clientFetch";
 
-    if (!res.ok) {
+export async function getUser() {
+    try {
+        return await fetchFromAPIClient("/auth/account/");
+    } catch {
         return null;
     }
-
-    return res.json();
 }

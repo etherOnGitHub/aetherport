@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets
+from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Project, Tag
 from .serialisers import TagsSerialiser, ProjectSerialiser
@@ -15,8 +16,7 @@ class TagsViewSet(viewsets.ModelViewSet):
 #-------------------------------
 # projects ViewSet
 #-------------------------------
-class ProjectViewSet(viewsets.ModelViewSet):
+class ProjectViewSet(ReadOnlyModelViewSet):
     queryset = Project.objects.all().order_by("-created_at")
     serializer_class = ProjectSerialiser
-    permission_classes = [IsAuthenticatedOrReadOnly]
     lookup_field = 'slug'

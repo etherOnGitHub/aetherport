@@ -1,23 +1,16 @@
 "use server";
 
-import { cookies } from "next/headers";
-
-export async function fetchAuth(path: string) {
-    const cookieStore = await cookies();
-    const access = cookieStore.get("access")?.value;
-    const refresh = cookieStore.get("refresh")?.value;
-
+export async function fetchAuth(path: string, options: RequestInit = {}) {
     const res = await fetch(`${process.env.API_URL}${path}`, {
-        headers: {
-            "Content-Type": "application/json",
-            Cookie: `access=${access}; refresh=${refresh}`,
-        },
+        ...options,
+        credentials: "include",
         cache: "no-store",
+        headers: {
+            ...(options.headers ?? {}),
+        },
     });
 
-    if (!res.ok) {
-        return null;
-    }
+    if (!res.ok) return null;
 
     return res.json();
 }

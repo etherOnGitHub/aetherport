@@ -49,7 +49,7 @@ export default function SplashLoader() {
             setProgress(100);
             setLoaded(true);
             setMinTime(true);
-        }, 4000);
+        }, 2000);
 
         return () => clearTimeout(failsafe);
     }, []);
@@ -63,7 +63,7 @@ export default function SplashLoader() {
         >
             {/* hero */}
             <Image
-                src="/images/brand/AW_transparent.png"
+                src="/images/brand/aevw.svg"
                 alt="Logo"
                 width={150}
                 height={150}

@@ -54,7 +54,7 @@ export default function Navbar() {
                             </Link>
                         </li>
                         <li className="w-full h-full border border-[--fg] border-r-8 border-l-8">
-                            <Link className="w-full h-full" href="/portfolio">
+                            <Link className="w-full h-full" href="/projects">
                                 Portfolio
                             </Link>
                         </li>
@@ -92,7 +92,7 @@ export default function Navbar() {
                         </li>
                         <li className="opacity-50 no-anim">|</li>
                         <li>
-                            <Link href="/portfolio">Portfolio</Link>
+                            <Link href="/projects">Portfolio</Link>
                         </li>
                         <li className="opacity-50 no-anim">|</li>
                         <li>

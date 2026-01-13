@@ -13,8 +13,7 @@ export async function fetchFromAPIClient(
         credentials: options.credentials ?? "include",
         cache: options.cache ?? "no-store",
         headers: {
-            "Content-Type": "application/json",
-            ...options.headers,
+            ...(options.headers ?? {}),
         },
     });
 
