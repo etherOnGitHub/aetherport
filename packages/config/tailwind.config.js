@@ -10,7 +10,7 @@ module.exports = {
                 barRed: "var(--bar-red)",
                 barAmber: "var(--bar-amber)",
                 barTeal: "var(--bar-teal)",
-                barPuple: "var(--bar-purple)",
+                barPurple: "var(--bar-purple)",
             }
         }
     }

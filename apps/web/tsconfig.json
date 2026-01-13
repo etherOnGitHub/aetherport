@@ -5,7 +5,8 @@
         "paths": {
             "@/*": ["./*"]
         },
-        "types": ["next", "next/types/global"]
+        "types": ["next", "next/types/global"],
+        "moduleResolution": "bundler"
     },
     "include": ["src", "app", "lib", "types"]
 }

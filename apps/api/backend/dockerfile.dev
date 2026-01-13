@@ -1,0 +1,20 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Install deps
+COPY requirements.txt .
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Copy your backend project
+COPY . .
+
+# Expose dev port
+EXPOSE 8000
+
+# Use Django development server, not Gunicorn
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

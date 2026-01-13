@@ -11,10 +11,11 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "your-default-secret-key")
 ALLOWED_HOSTS = ["*"]
 
 DATABASE_URL = os.environ.get("DEV_DATABASE_URL")
-stripURL = DATABASE_URL.split('?')[0]
-parsed = urlparse(stripURL)
+
 
 if DATABASE_URL:
+    stripURL = DATABASE_URL.split('?')[0]
+    parsed = urlparse(stripURL)
     print("Using DEV database")
     DATABASES = {
         'default': {

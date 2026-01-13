@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from "tailwindcss";
-import sharedConfig from "../../packages/config/tailwind.config";
+const sharedConfig = require("../../packages/config/tailwind.config") as Config;
 
 const config: Config = {
     ...sharedConfig,

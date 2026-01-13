@@ -52,7 +52,10 @@ export default function CanvasContext({ src }: { src: string }) {
         };
         return () => {
             cancelled = true;
-            if (binLoop) binLoop();
+            if (binLoop) {
+                binLoop();
+                binLoop = null;
+            }
         };
     }
 
@@ -67,7 +70,9 @@ export default function CanvasContext({ src }: { src: string }) {
         canvas.width = size.width + overSize * 4;
         canvas.height = size.height + overSize * 4;
 
-        initCanvas(ctx, canvas, src);
+        const cleanup = initCanvas(ctx, canvas, src);
+
+        return cleanup;
     }, [size, src]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
