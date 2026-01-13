@@ -1,15 +1,27 @@
 "use server";
 
-export const API_URL = process.env.API_URL ?? process.env.API_BASE_URL ?? null;
+export async function fetchAPI(path: string, options: RequestInit = {}) {
+    const API_URL = process.env.API_BASE_URL;
+    console.log(
+        "isServer",
+        typeof window === "undefined",
+        "API_BASE_URL",
+        process.env.API_BASE_URL
+    );
 
-export async function fetchAPI(path: string, options?: RequestInit) {
+    console.log("API_BASE_URL at runtime:", process.env.API_BASE_URL);
+
+    if (!API_URL) {
+        throw new Error("API_URL is not defined in environment variables");
+    }
+
     const isAuthRoute = path.startsWith("auth/") || path.startsWith("users/");
+
     const res = await fetch(`${API_URL}${path}`, {
         ...options,
         next: isAuthRoute ? undefined : { revalidate: 5 }, // caching
         headers: {
-            "Content-Type": "application/json",
-            ...options?.headers,
+            ...(options.headers ?? {}),
         },
     });
 

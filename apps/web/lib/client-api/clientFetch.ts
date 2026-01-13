@@ -1,7 +1,13 @@
 "use client";
 
 export function getAPIURL() {
-    return process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+    return process.env.NEXT_PUBLIC_API_URL;
+
+    if (!process.env.NEXT_PUBLIC_API_URL) {
+        throw new Error(
+            "NEXT_PUBLIC_API_URL is not defined in environment variables"
+        );
+    }
 }
 
 export async function fetchFromAPIClient(
