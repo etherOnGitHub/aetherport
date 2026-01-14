@@ -1,4 +1,4 @@
-"use server";
+export const dynamic = "force-dynamic";
 
 import Projects from "../components/content/Projects";
 import { getProjects } from "../../../lib/server-api/getProjects";
