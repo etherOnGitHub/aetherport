@@ -31,7 +31,7 @@
 | **Turborepo**      | Monorepo build orchestration                    |
 | **Docker Compose** | Local containerized development                 |
 | **Fly.io**         | Backend deployment platform                     |
-| **Vercel**         | Frontend deployment (inferred from CORS config) |
+| **Vercel**         | Frontend deployment                             |
 
 ---
 
