@@ -46,7 +46,7 @@
 │  │      apps/web           │    │      apps/api/backend       │ │
 │  │    (Next.js 16)         │    │       (Django 5.2)          │ │
 │  │                         │    │                             │ │
-│  │  • Server Components    │───▶│  • REST API (/api/v1/)      │ │
+│  │  • Server Components    │──▶ │  • REST API (/api/v1/)     │ │
 │  │  • Client Components    │    │  • JWT Authentication       │ │
 │  │  • Server Actions       │    │  • Projects & Tags CRUD     │ │
 │  │  • Tailwind CSS         │    │  • PostgreSQL Database      │ │
